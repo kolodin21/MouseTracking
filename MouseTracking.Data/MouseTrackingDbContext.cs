@@ -6,6 +6,9 @@ namespace MouseTracking.Data
 {
     public class MouseTrackingDbContext : DbContext
     {
+        public MouseTrackingDbContext(DbContextOptions<MouseTrackingDbContext> options)
+            : base(options) { }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
            optionsBuilder.UseSqlite(DatabaseConfig.ConnectionString);
