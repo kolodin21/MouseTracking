@@ -1,0 +1,38 @@
+/* Общие стили для страницы */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f8ff; /* Цвет фона */
+}
+
+/* Контейнер для центрирования кнопки */
+.container {
+    text-align: center;
+}
+
+/* Стиль кнопки */
+.send-button {
+    padding: 15px 30px;
+    font-size: 16px;
+    background-color: #4CAF50; /* Зеленый цвет */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Эффект при наведении */
+.send-button:hover {
+    background-color: #45a049;
+}
+
+/* Эффект при нажатии */
+.send-button:active {
+    background-color: #388e3c;
+}

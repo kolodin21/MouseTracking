@@ -8,7 +8,7 @@ document.addEventListener("mousemove", (event) => {
         y: event.clientY,
         t: Date.now()
     };
-    console.log("Движение мыши:", entry); // Логируем события
+    //console.log("Движение мыши:", entry); // Логируем события
     mouseMovements.push(entry);
 });
 
@@ -25,10 +25,19 @@ function sendMouseData() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(mouseMovements)
     })
-    .then(response => response.text())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Сетевая ошибка: ' + response.status);
+        }
+        return response.json(); // Парсим ответ как JSON
+    })
     .then(data => {
-        alert(data.message); // Выводим сообщение
+        console.log("Ответ от сервера:", data);  // Логирование
+
+        alert( "Сообщение от сервера: " + data.message + "\n"
+            + "Количество записей: " + data.count); // Выводим сообщение
+            
         mouseMovements = []; // Очистка массива после отправки
     })
-    .catch(error => console.error("Ошибка:", error));
+    .catch(error => console.error("Ошибка:", error))
 }
