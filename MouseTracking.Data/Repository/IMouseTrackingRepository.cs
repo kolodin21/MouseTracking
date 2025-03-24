@@ -4,5 +4,5 @@ namespace MouseTracking.Data.Repository;
 
 public interface IMouseTrackingRepository
 {
-    Task SaveMouseDataAsync(List<MouseMoveEvent> mouseData);
+    Task SaveMouseDataAsync(List<MouseMoveEventLog> mouseData);
 }

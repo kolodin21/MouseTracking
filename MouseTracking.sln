@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35806.99 d17.13
+VisualStudioVersion = 17.13.35806.99
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseTracking.Domain", "MouseTracking.Domain\MouseTracking.Domain.csproj", "{5A911C57-E31A-4D24-96FE-C905FCB0217E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseTracking.Data", "MouseTracking.Data\MouseTracking.Data.csproj", "{FDEB1CA3-B8B6-4BEE-8272-719E1189D4D9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseTracking.Api", "MouseTracking.Api\MouseTracking.Api.csproj", "{2EF0F293-8E98-43E5-9807-991AF67E9D80}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +32,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5A911C57-E31A-4D24-96FE-C905FCB0217E} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
+		{FDEB1CA3-B8B6-4BEE-8272-719E1189D4D9} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
+		{2EF0F293-8E98-43E5-9807-991AF67E9D80} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {30CC6705-414D-41E6-B3A9-BA1CA603349F}

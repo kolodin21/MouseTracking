@@ -1,23 +1,43 @@
-﻿using MouseTracking.Domain;
+﻿using Microsoft.EntityFrameworkCore;
+using MouseTracking.Domain;
+using NLog;
 using System.Text.Json;
 
 namespace MouseTracking.Data.Repository
 {
-    public class MouseTrackingRepository : IMouseTrackingRepository
+    public class MouseTrackingRepository(MouseTrackingDbContext _context) : IMouseTrackingRepository
     {
-        private readonly MouseTrackingDbContext _context;
-
-        public MouseTrackingRepository(MouseTrackingDbContext context)
+        private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
+        public async Task SaveMouseDataAsync(List<MouseMoveEventLog> mouseData)
         {
-            _context = context;
-        }
+            try
+            {
+                if (mouseData == null || mouseData.Count == 0)
+                {
+                    throw new ArgumentException("Список событий мыши пуст или null.");
+                }
 
-        public async Task SaveMouseDataAsync(List<MouseMoveEvent> mouseData)
-        {
-            var jsonData = JsonSerializer.Serialize(mouseData);
-            var entity = new MouseMoveEvent { DataJson = jsonData };
-            _context.MouseMoveEvents.Add(entity);
-            await _context.SaveChangesAsync();
+                var jsonData = JsonSerializer.Serialize(mouseData);
+                var entity = new MouseMoveEvent { DataJson = jsonData };
+
+                _context.MouseMoveEvents.Add(entity);
+                await _context.SaveChangesAsync();
+            }
+            catch (JsonException ex)
+            {
+                _logger.Error(ex, "Ошибка сериализации JSON.");
+                throw;
+            }
+            catch (DbUpdateException ex)
+            {
+                _logger.Error(ex, "Ошибка при сохранении в БД.");
+                throw;
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "Неизвестная ошибка при сохранении данных.");
+                throw;
+            }
         }
     }
 }
