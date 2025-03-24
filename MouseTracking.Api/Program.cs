@@ -14,6 +14,7 @@ var logger = LogManager.GetCurrentClassLogger();
 var app = builder.Build();
 
 app.UseHttpsRedirection();
+
 app.UseCors(corsPolicyBuilder => corsPolicyBuilder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 
 app.MapPost("/mouse-tracking", async (IMouseTrackingRepository repository, List<MouseMoveEventLog> mouseData) =>

@@ -8,7 +8,7 @@ namespace MouseTracking.Data.Repository
     public class MouseTrackingRepository(MouseTrackingDbContext _context) : IMouseTrackingRepository
     {
         private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
-        public async Task SaveMouseDataAsync(List<MouseMoveEventLog> mouseData)
+        public async Task SaveMouseDataAsync(List<MouseMoveEventLog>? mouseData)
         {
             try
             {
@@ -22,11 +22,6 @@ namespace MouseTracking.Data.Repository
 
                 _context.MouseMoveEvents.Add(entity);
                 await _context.SaveChangesAsync();
-            }
-            catch (JsonException ex)
-            {
-                _logger.Error(ex, "Ошибка сериализации JSON.");
-                throw;
             }
             catch (DbUpdateException ex)
             {

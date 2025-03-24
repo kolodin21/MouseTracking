@@ -6,6 +6,7 @@ namespace MouseTracking.Data
 {
     public class MouseTrackingDbContext : DbContext
     {
+        public MouseTrackingDbContext() { }
         public MouseTrackingDbContext(DbContextOptions<MouseTrackingDbContext> options)
             : base(options) { }
 
@@ -14,6 +15,6 @@ namespace MouseTracking.Data
            optionsBuilder.UseSqlite(DatabaseConfig.ConnectionString);
            base.OnConfiguring(optionsBuilder);
         }
-        public DbSet<MouseMoveEvent> MouseMoveEvents { get; set; }
+        public virtual DbSet<MouseMoveEvent> MouseMoveEvents { get; set; }
     }
 }
