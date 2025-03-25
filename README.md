@@ -4,11 +4,12 @@
 
 ## Структура проекта
 
-1. **MouseTracking.Api** — API, которое принимает данные от клиента и сохраняет их в базу данных.
-2. **MouseTracking.Data** — Слой данных, который включает взаимодействие с базой данных (SQLite), с использованием Entity Framework.
-3. **MouseTracking.Domain** — Доменные модели и бизнес-логика.
-4. **MouseTracking.Client** — Клиентская часть, написанная на HTML, JavaScript и CSS для отображения интерфейса и отправки данных на сервер.
-
+1. **MouseTracking.Api** (Presentation Layer) — API, которое принимает данные от клиента и сохраняет их в базу данных.
+2. **MouseTracking.Application ** (Application  Layer) - Бизнес - логика приложения
+3. **MouseTracking.Data** (Infrastructure Layer) — Слой данных, который включает взаимодействие с базой данных (SQLite), с использованием Entity Framework.
+4. **MouseTracking.Domain** (Domain Layer) — Доменные модели и бизнес-логика.
+5. **MouseTracking.Client** (UI Layer) — Клиентская часть, написанная на HTML, JavaScript и CSS для отображения интерфейса и отправки данных на сервер.
+6. **MouseTracking.UnitTest** - Проект для тестирования приложения
 ## Технологии
 
 - **SQLite** — Легковесная база данных для хранения информации о движениях мыши.
