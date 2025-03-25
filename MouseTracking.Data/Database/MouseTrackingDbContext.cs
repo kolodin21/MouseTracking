@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MouseTracking.Data.Configuration;
-using MouseTracking.Domain;
+using MouseTracking.Domain.Entities;
 
-namespace MouseTracking.Data
+namespace MouseTracking.Data.Database
 {
     public class MouseTrackingDbContext : DbContext
     {

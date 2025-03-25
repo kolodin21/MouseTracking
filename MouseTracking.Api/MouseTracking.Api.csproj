@@ -7,8 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MouseTracikng.Application\MouseTracking.Application.csproj" />
     <ProjectReference Include="..\MouseTracking.Data\MouseTracking.Data.csproj" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.3" />
+    <ProjectReference Include="..\MouseTracking.Domain\MouseTracking.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>

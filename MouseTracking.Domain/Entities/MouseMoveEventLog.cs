@@ -1,4 +1,4 @@
-﻿namespace MouseTracking.Domain;
+﻿namespace MouseTracking.Domain.Entities;
 
 public class MouseMoveEventLog
 {

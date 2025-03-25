@@ -1,10 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Moq;
-using Xunit;
+using MouseTracking.Data.Database;
 using MouseTracking.Data.Repository;
-using MouseTracking.Domain;
+using MouseTracking.Domain.Entities;
+using Xunit;
 
-namespace MouseTracking.Data.Unit_test
+namespace MouseTracking.UnitTest.MouseData.Test
 {
     public class MouseTrackingRepositoryTests
     {

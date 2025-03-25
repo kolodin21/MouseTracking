@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseTracking.Api", "MouseT
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseTracking.Application", "MouseTracikng.Application\MouseTracking.Application.csproj", "{7046A437-D2F8-43BC-A2E9-CD7BF30E5A68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseTracking.UnitTest", "MouseTracking.UnitTest\MouseTracking.UnitTest.csproj", "{4230497C-390B-429F-9B6E-CD92AC14F807}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,14 @@ Global
 		{2EF0F293-8E98-43E5-9807-991AF67E9D80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EF0F293-8E98-43E5-9807-991AF67E9D80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EF0F293-8E98-43E5-9807-991AF67E9D80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7046A437-D2F8-43BC-A2E9-CD7BF30E5A68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7046A437-D2F8-43BC-A2E9-CD7BF30E5A68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7046A437-D2F8-43BC-A2E9-CD7BF30E5A68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7046A437-D2F8-43BC-A2E9-CD7BF30E5A68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4230497C-390B-429F-9B6E-CD92AC14F807}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4230497C-390B-429F-9B6E-CD92AC14F807}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4230497C-390B-429F-9B6E-CD92AC14F807}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4230497C-390B-429F-9B6E-CD92AC14F807}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -37,6 +49,7 @@ Global
 		{5A911C57-E31A-4D24-96FE-C905FCB0217E} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
 		{FDEB1CA3-B8B6-4BEE-8272-719E1189D4D9} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
 		{2EF0F293-8E98-43E5-9807-991AF67E9D80} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
+		{7046A437-D2F8-43BC-A2E9-CD7BF30E5A68} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {30CC6705-414D-41E6-B3A9-BA1CA603349F}

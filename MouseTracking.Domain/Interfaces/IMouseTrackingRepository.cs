@@ -1,6 +1,6 @@
-﻿using MouseTracking.Domain;
+﻿using MouseTracking.Domain.Entities;
 
-namespace MouseTracking.Data.Repository;
+namespace MouseTracking.Domain.Interfaces;
 
 public interface IMouseTrackingRepository
 {

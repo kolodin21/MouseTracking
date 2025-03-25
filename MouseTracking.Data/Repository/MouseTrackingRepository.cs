@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MouseTracking.Domain;
+using MouseTracking.Domain.Entities;
 using NLog;
 using System.Text.Json;
+using MouseTracking.Data.Database;
+using MouseTracking.Domain.Interfaces;
 
 namespace MouseTracking.Data.Repository
 {

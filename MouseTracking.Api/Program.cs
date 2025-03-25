@@ -1,13 +1,18 @@
-using MouseTracking.Data.Extensions;
+using MouseTracking.Api.Extensions;
+using MouseTracking.Application.Service;
 using MouseTracking.Data.Repository;
-using MouseTracking.Domain;
+using MouseTracking.Domain.Entities;
+using MouseTracking.Domain.Interfaces;
 using NLog;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddCors();
+
+// Регистрируем сервисы
 builder.Services.AddMouseTrackingDbContext();
 builder.Services.AddScoped<IMouseTrackingRepository, MouseTrackingRepository>();
+builder.Services.AddScoped<MouseMoveEventService>();
 
 var logger = LogManager.GetCurrentClassLogger();
 
@@ -17,7 +22,7 @@ app.UseHttpsRedirection();
 
 app.UseCors(corsPolicyBuilder => corsPolicyBuilder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 
-app.MapPost("/mouse-tracking", async (IMouseTrackingRepository repository, List<MouseMoveEventLog> mouseData) =>
+app.MapPost("/mouse-tracking", async (MouseMoveEventService service, List<MouseMoveEventLog> mouseData) =>
 {
     try
     {
@@ -27,7 +32,7 @@ app.MapPost("/mouse-tracking", async (IMouseTrackingRepository repository, List<
             return Results.BadRequest("Данные отсутствуют");
         }
 
-        await repository.SaveMouseDataAsync(mouseData);
+        await service.SaveMouseDataAsync(mouseData);
         logger.Info($"Успешно сохранено {mouseData.Count} событий.");
 
         return Results.Json(new { message = "Данные сохранены", count = mouseData.Count });
@@ -38,5 +43,6 @@ app.MapPost("/mouse-tracking", async (IMouseTrackingRepository repository, List<
         return Results.Problem("Ошибка при обработке данных на сервере.");
     }
 });
+
 
 app.Run();

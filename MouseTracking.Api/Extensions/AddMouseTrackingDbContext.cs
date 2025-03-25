@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
+using MouseTracking.Data.Database;
 
-namespace MouseTracking.Data.Extensions
+namespace MouseTracking.Api.Extensions
 {
     public static class ServiceCollectionExtensions
     {
